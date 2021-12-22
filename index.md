@@ -1,39 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
-## Welcome to GitHub Pages
+## Welcome
 
-You can use the [editor on GitHub](https://github.com/PeterSzasz/PeterSzasz.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+This site is for my hobby programming projects. To show what was the purpose of them.
+Right now all of them in Python3, but some PHP is in the planning.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes and docs
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PeterSzasz/PeterSzasz.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/)
+In the last few month I worked on a Tetris game to fiddle with pyglets basic graphics capabilities and I ended up implementing a cool State Pattern. Before that was a pomodoro desktop app using platform independent PyQT and custom graphics.
+Then I refactored/rebuilt my earlier Arcade/pyglet platformer game. Got a nice State pattern for app states, physics, replay system, test capabilities, enemy/difficult system with a Factory Method pattern, etc. I plan to add more levels, mini-rpg-like attribute system and a bunch more eventually.
+But in the coming weeks I want to reach a playable state and then move onto the GraphApp.
+That Graph desktop app is a generator, also in PyQT. It can show you some nice nodes and lines but nothing more. The main goal of that project is to generate a graph based Map. Nice features would be graphics, to be able to export that graph/map and to use more (configurable) algorithms.
