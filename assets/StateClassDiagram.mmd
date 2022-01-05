@@ -2,9 +2,10 @@ classDiagram
 %% @backgroundColor(#252525)
     arcade_Window o-- BaseState
     BaseState <|-- MainMenu
+    BaseState <|-- Info
+    BaseState <|-- Conf
     BaseState <|-- Gameplay
     BaseState <|-- Paused
-    BaseState <|-- Info
     class BaseState{
         +window
         +game_logic
