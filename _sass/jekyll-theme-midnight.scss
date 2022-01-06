@@ -158,6 +158,7 @@ dt {
   margin-left: auto;
   margin-right: 1em;
   float: left;
+  width: 50%;
 }
 
 .align-right {
@@ -165,12 +166,14 @@ dt {
   margin-left: 1em;
   margin-right: auto;
   float: right;
+  width: 50%;
 }
 
 .align-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 50%;
 }
 
 #header {
