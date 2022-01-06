@@ -15,3 +15,4 @@ In `ttrs` I was curious what can be done to create some custom graphics in code 
 
 `Pltfrmr` started as a python arcade library experiment and then it outgrow itself.
 
+Last but not least the `GraphApp`. Generate nodes (quasi) randomly or with some clever algorithms and connect them randomly or with some clever algorithms.
