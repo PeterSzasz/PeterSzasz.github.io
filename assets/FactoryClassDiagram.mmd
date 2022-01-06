@@ -1,0 +1,7 @@
+classDiagram
+%% @backgroundColor(#252525)
+    Enemy .. EnemyFactory
+    EnemyFactory <|-- EasyEnemy
+    EnemyFactory <|-- MediumEnemy
+    EnemyFactory <|-- HardEnemy
+    EnemyFactory : get_enemy()

@@ -13,7 +13,7 @@ I abandoned this project just before pymunk implementation and when I re-started
 
 MVC was among the first that came in mind, but as it turns out if you are using a library like arcade half of the problems are already solved in this matter. Right now I only added Observer for Model. It handles player movement the main reason behind every change. I'm planning to extend this to menu navigation, sound triggering and maybe handling game logic changes, if these topics mature enough. Controller is handled in arcade and View is what pyglet created for, so not much to do here. I was thinking of how can I force the Strategy pattern into the system but I abandoned the idea because of its redundancy. As for implementation pyglet have an event handling system already with all the event registering, storing, notifying, etc. So `Gameplay` class inherits from `pyglet.event.EventDispatcher` also. The keyboard (and the minimalistic controller) presses and releases all dispatch an appropriate, registered event. The `MainActor` and a `MovementLogger` classes catches the relevant ones and reacts.
 
-`actors.py`
+actors.py
 {% highlight python %}
 class MainActor(AnimatedWalkingSprite):
 ...
@@ -25,7 +25,7 @@ class MainActor(AnimatedWalkingSprite):
     ...
 ...
 {% endhighlight %}
-`states.py`
+states.py
 {% highlight python %}
 from pyglet.event import EventDispatcher
 
@@ -45,11 +45,12 @@ Gameplay.register_event_type('move_left')
 {% endhighlight %}
 
 Oh yea, the `MovementLogger` class is a great thing. It not just logs the movement events to the console but stores them as a list of timed movement actions in a file, which then can be 'interpreted' by a `LogReplay`. This means that you can replay previous player movements with a few hundreth seconds accuracy. This I want to use for automatic testing and/or for player-created-combo-sets. All great and interesting features and all based on a simple Observer pattern.
-![state pattern image]({{ site.url }}/assets/ObserverClassDiagram.png){:align="center" width="75%"}
+![observer pattern image]({{ site.url }}/assets/ObserverClassDiagram.png){: .align-left}
 
 The game uses a State pattern for menus and level loading. When someone starts prototyping a game a menu can easily been left out at first, who wants to constantly click through it just to test something simple. At a certain point it became necessary to implement at least a minimalistic one just to give more personality to the game. Arcade got the option to handle views, this builds upon pyglets window and graphic context handling, and it is a good way to show different scenes, levels, menus, etc in one particular window. A slight problem comes when you want to transfer data between views. A solution for this is to inherit a class from pyglet/arcade Window class and create some permanent data struct there. The different views can reach it, but you have to manage the data, make sure everybody can reach everything it needs. Some data remains there in this situation even when the actual view does not need it. A better solution could be to inherit a base State class from arcade.View and inherit every old view from it. For the data create and externalize a game_logic and maybe a player class and store permanent information there in its own class. The problem with unnecessary information floating around is still exists but at least they are in their own classes. With a base class like this the views become States which creates a more obvious role for them. Especially with a set_next_state method which is to load the next state/view into the window.
-![state pattern image]({{ site.url }}/assets/StateClassDiagram.png){:align="center" width="75%"}
+![state pattern image]({{ site.url }}/assets/StateClassDiagram.png){: .align-center}
 
-Enemy creation can be handled with the help of a Factory pattern or an Abstract Factory.
-
-The Observer was interestin at first, then I realized its potential and implemented logging and from that a replay class. and more to come
+Enemy creation was handled with a Factory design pattern. Later when the enemy numbers became so big that creation should be based on quasi random groups or level/biom/origin based (forest, beach, water, etc) mixing an Abstract Factory should be used.
+For this game right now the difficulty system is a 3 level enemy generation system. Three diffficulty class determines the properties like damage and health of said monsters. At the beginning of each level during level creation the `game_logic` tells the actual difficulty and based on this different classes will be called to generate foes.
+![factory pattern image]({{ site.url }}/assets/FactoryClassDiagram.png){: .align-left}
+Not very sophisticated but it does the job. The really interesting system would be with the Abstract Factory and twice as many enemies. Even better if the `Gameplay` class got its difficulty class through dependency injection and the whole determine difficulty would be inside game_logic.
