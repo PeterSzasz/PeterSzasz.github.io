@@ -1,0 +1,9 @@
+classDiagram
+%% @backgroundColor(#252525)
+    BaseInput <|-- KeyboardInput
+    BaseInput <|-- ControllerInput
+    class BaseInput{
+        +update()
+        +on_key_press()
+        +on_key_release()
+    }
