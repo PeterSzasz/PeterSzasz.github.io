@@ -1,9 +1,9 @@
 classDiagram
 %% @backgroundColor(#252525)
-    EventDispatcher <|-- Gameplay
-    Gameplay o-- MainActor
-    Gameplay o-- MovementLogger
-    Gameplay : on_key_press()
+    EventDispatcher <|-- KeyboardInput
+    KeyboardInput o-- MainActor
+    KeyboardInput o-- MovementLogger
+    KeyboardInput : on_key_press()
     MainActor : move_left()
     MovementLogger : move_left()
     class EventDispatcher{
