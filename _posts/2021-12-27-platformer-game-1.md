@@ -28,6 +28,6 @@ For this game right now the difficulty system is a 3 level enemy generation syst
 ![factory pattern image]({{ site.url }}/assets/FactoryClassDiagram.png){: .align-left}
 Not very sophisticated but it does the job. The really interesting system would be with the Abstract Factory and twice as many enemies. Even better if the `Gameplay` class got its difficulty class through dependency injection and the whole determine difficulty would be inside game_logic.
 
-
+Second part [here]({% post_url 2022-01-11-platformer-game-2 %}).
 {% highlight python %}
 {% endhighlight %}
