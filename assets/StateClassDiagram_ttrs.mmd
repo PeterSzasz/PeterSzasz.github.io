@@ -1,0 +1,15 @@
+classDiagram
+%% @backgroundColor(#252525)
+    GUI .. GameState: GUI as context
+    GameState <|-- Menu
+    GameState <|-- Running
+    GameState <|-- Scores
+    class GameState{
+        +context
+        +on_key_press()
+        +on_update()
+        +on_draw()
+    }
+    class GUI{
+        +state
+    }
