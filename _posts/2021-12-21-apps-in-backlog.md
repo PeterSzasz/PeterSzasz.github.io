@@ -15,7 +15,7 @@ In [ttrs]({% post_url 2021-12-25-ttrs-app %}) I was curious what can be done to 
 
 [Pltfrmr]({% post_url 2021-12-27-platformer-game-1 %}), [second part]({% post_url 2022-01-11-platformer-game-2 %}) started as a python arcade library experiment and then it outgrow itself.
 
-Last but not least the GraphApp. Generate nodes (quasi) randomly or with some clever algorithms and connect them randomly or with some clever algorithms.
+Last but not least the [GraphApp]({% post_url 2022-01-06-graph-app %}). Generate nodes (quasi) randomly or with some clever algorithms and connect them randomly or with some clever algorithms.
 
 A mind map of what can be expected:
 
