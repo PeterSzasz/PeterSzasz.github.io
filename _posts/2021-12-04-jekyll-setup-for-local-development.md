@@ -10,6 +10,7 @@ A quick description about Jekyll + Github and how to set an environment for loca
 <!--more-->
 Basically you get yourself the theme and your site's base code locally. Modify part of the theme and when you push to remote it will replace default theme's files with these modified files when github generates the static site.
 Here we use the [midnight][midnight] theme.
+{: .text-justify}
 
 Create a local repo.
 {% highlight bash %}
