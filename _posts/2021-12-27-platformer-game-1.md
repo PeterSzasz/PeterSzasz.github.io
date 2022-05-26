@@ -6,9 +6,9 @@ date:   2021-12-27 11:23:10 +0100
 categories: backlog apps pltfrmr
 excerpt_separator: <!--more-->
 ---
-A platformer game needs graphics for the levels and characters, movement logic (physics), menus, enemies, etc. It is a good base for design patterns too, not just game related but anything.
+A platformer game needs graphics for the levels and characters, movement logic (physics), menus, enemies, etc. It's a good base for design patterns too, not just game related but anything.
 <!--more-->
-I liked that I can use Tiled for map creation and arcade handles the import and first goal was just to create a few maps then implement pymunk as the physics engine, some menu screens. Then I abandoned this project just before pymunk implementation and when I re-started work a few weeks ago a big refactor brought a real State pattern into the game. And it became obvious that in this project, in this blob of a game without strict design ideas, I can implement a bunch of patterns. So I started searching for patterns. I was just curious what functionalities these patterns can bring to this game.
+I liked the idea that I can use Tiled for map creation and arcade handles the import mechanism, so the first goal was just to create a few maps, make them playable then implement pymunk as the physics engine, some menu screens and so on. Then I abandoned this project just before pymunk implementation and when I re-started work a few weeks ago a big refactor brought a real State pattern into the game. And it became obvious that in this project, in this blob of a game without strict design ideas, I can implement a bunch of patterns. So I started searching for patterns. I was just curious what functionalities these patterns can bring to this game.
 {: .text-justify}
 The game uses a State pattern for menus and level loading. In the first iteration the menu/view system used a string based state machine kinda thing, it worked but it was messy. A state variable stored the name of the actual state and one big method handled the state switching. The good thing about this was that state change rules were in one place, for 3-5 states this is still in a 'human readable form', but after that you need something more robust.
 {: .text-justify}
